@@ -5,7 +5,7 @@ const mongoose = require('mongoose'); // Importation du package Moongoose
 
 const dotenv = require("dotenv").config(); // Importation du module Dotenv (variables d'environnement)
 
-const helmet = require("helmet"); // Importation d'helmet (en-têtes HTTP sécurisés)
+const helmet = require("helmet"); // Importation du package d'helmet (en-têtes HTTP sécurisés)
 
 /* Importation des routes dans l'app */
 

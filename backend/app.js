@@ -1,9 +1,9 @@
-const express = require('express');  // Importation du framework Express
+const express = require('express');  // Importation le framework Express
 const app = express();
 
 const mongoose = require('mongoose'); // Importation du package Moongoose
 
-const dotenv = require("dotenv").config(); // Importation du module Dotenv (variables d'environnement)
+const dotenv = require("dotenv").config(); 
 
 const helmet = require("helmet"); // Importation du package d'helmet (en-têtes HTTP sécurisés)
 
@@ -11,7 +11,7 @@ const helmet = require("helmet"); // Importation du package d'helmet (en-têtes 
 
 const userRoutes = require('./routes/user');
 const sauceRoutes = require('./routes/sauce');
-const path = require('path'); // Module de chemin Node.js qui est utilisé pour gérer et transformer les chemins de fichiers
+const path = require('path'); // Module de chemin Node.js qui est utilisé pour gérer les chemins de fichiers
 
 /* Connection a la base de données */
 
@@ -21,7 +21,7 @@ mongoose.connect(`mongodb+srv://${process.env.MONGO_PROJECT}:${process.env.MONGO
   .then(() => console.log('Connexion à MongoDB réussie !'))
   .catch(() => console.log('Connexion à MongoDB échouée !'));
 
-/* Middleware qui va permettre de débloquer le CORS afin que les utilisateurs est accés a l'API */
+/* Middleware qui va permettre de débloquer le systeme de sécurité CORS afin que les utilisateurs est accés a l'API */
 
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');

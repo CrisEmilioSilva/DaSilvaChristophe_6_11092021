@@ -4,7 +4,7 @@ const app = require('./app');  // Importation de l'app Express sur le serveur
 
 const dotenv = require('dotenv').config(); // Importation du module Dotenv (variables d'environnement)
 
-/* normalizePort renvoie un port valide, qu'il soit fourni sous la forme d'un numéro ou d'une chaîne */
+/* normalizePort renvoie un port valide, qu'il soit fourni sous la forme d'un nombre ou d'une chaîne */
 
 const normalizePort = val => {
   const port = parseInt(val, 10);
@@ -20,7 +20,7 @@ const normalizePort = val => {
 
 const port = normalizePort(process.env.PORT);
 
-app.set('port', port); // app.set permet de définir le port d'écoute de l'app Express
+app.set('port', port); // définition du port d'écoute de l'app Express
 
 /* errorHandler recherche et gère les différentes erreurs puis les enregistre dans le serveur */
 
@@ -44,7 +44,7 @@ const errorHandler = error => {
   }
 };
 
-const server = http.createServer(app); // Création du serveur Node et apel de l'app Express
+const server = http.createServer(app); // Création du serveur Node rélié a l'app Express
 
 server.on('error', errorHandler);
 server.on('listening', () => {
@@ -53,4 +53,4 @@ server.on('listening', () => {
   console.log('Listening on ' + bind);
 });
 
-server.listen(port); // server.listen défini le port d'écoute du serveur
+server.listen(port); // définition du port d'écoute du serveur

@@ -20,8 +20,7 @@ exports.getOneSauce = (req, res, next) => {
 };
 
 exports.createSauce = (req, res, next) => {
-    const sauceObject = JSON.parse(req.body.sauce);  // Récupération des valeurs du model de sauce en objet JS avec JSON.parse
-    delete sauceObject._id;
+    const sauceObject = JSON.parse(req.body.sauce);  // Récupération des valeurs du model de sauce dans le corp de requete et mise en objet JS avec JSON.parse
     const sauce = new Sauce({
         ...sauceObject,  // L'opérateur spread va permettre de faire une copie de toutes les valeurs du model de sauce
         imageUrl: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`  // Génère une url complète pour l'image téléchargé par l'utilisateur
